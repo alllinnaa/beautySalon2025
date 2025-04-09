@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | Butterfly</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/generalForAllPages.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <a href="services.html" class="logo">
+            <i class="fas fa-butterfly"></i> Butterfly
+        </a>
+        <nav>
+            <ul>
+                <li><a href="book-appointment.html"><i class="fas fa-calendar-plus"></i> Book Appointment</a></li>
+                <li><a href="my-appointments.html"><i class="far fa-calendar-check"></i> My Appointments</a></li>
+                <li><a href="history.html"><i class="fas fa-history"></i> History</a></li>
+                <li><a href="services.html"><i class="fas fa-spa"></i> Services</a></li>
+                <li><a href="profile.html"><i class="far fa-user"></i> My Profile</a></li>
+                <li><button class="logout-btn">Log Out</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="profile-container">
+            <div class="profile-header">
+                <h1><i class="far fa-user"></i> My Profile</h1>
+            </div>
+
+            <div class="profile-content">
+                <div class="profile-section">
+                    <h3><i class="fas fa-info-circle"></i> Personal Information</h3>
+                    <div class="info-row">
+                        <div class="info-label">First Name:</div>
+                        <div class="info-value">Emily</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">Last Name:</div>
+                        <div class="info-value">Johnson</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">Email:</div>
+                        <div class="info-value">emily.johnson@example.com</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">Phone:</div>
+                        <div class="info-value">+1 (555) 123-4567</div>
+                    </div>
+                    <div class="button-container">
+                        <button class="edit-btn"><i class="fas fa-edit"></i> Edit Information</button>
+                    </div>
+                </div>
+
+                <div class="profile-section">
+                    <h3><i class="fas fa-lock"></i> Account Security</h3>
+                    <div class="info-row">
+                        <div class="info-label">Password:</div>
+                        <div class="info-value">••••••••</div>
+                    </div>
+                    <div class="button-container">
+                        <button class="edit-btn"><i class="fas fa-edit"></i> Change Password</button>
+                    </div>
+                    
+                </div>
+
+               
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Butterfly Beauty Salon. All rights reserved.</p>
+    </footer>
+
+    <script src="js/logoutBtn.js"></script>
+</body>
+</html>
