@@ -32,4 +32,54 @@ const validateUserData = (req, res, next) => {
     next();
 };
 
-module.exports = validateUserData;
+const validateLoginData = (req, res, next) => {
+    const { email, password } = req.body;
+
+    if (!email || !password) {
+        return res.status(400).json({ error: 'Email and password are required' });
+    }
+
+    if (!validator.isEmail(email)) {
+        return res.status(400).json({ error: 'Invalid email format' });
+    }
+
+    next();
+};
+
+const validateUpdateProfile = (req, res, next) => {
+    const { firstName, lastName, email, phone, password } = req.body;
+
+    // Валідація імен
+    if (firstName && !/^[A-Za-zА-Яа-яЇїІіЄєҐґ]+$/.test(firstName)) {
+        return res.status(400).json({ error: 'First name must contain only letters' });
+    }
+
+    if (lastName && !/^[A-Za-zА-Яа-яЇїІіЄєҐґ]+$/.test(lastName)) {
+        return res.status(400).json({ error: 'Last name must contain only letters' });
+    }
+
+    // Валідація email
+    if (email && !validator.isEmail(email)) {
+        return res.status(400).json({ error: 'Invalid email format' });
+    }
+
+    // Валідація телефону
+    if (phone && !/^\+380\d{9}$/.test(phone)) {
+        return res.status(400).json({ error: 'Phone must be in +380XXXXXXXXX format' });
+    }
+
+    // Валідація паролю (якщо змінюється)
+    if (password && (password.length < 8 || !/[A-Z]/.test(password) || !/\d/.test(password))) {
+        return res.status(400).json({
+            error: 'Password must be at least 8 characters long, contain at least one uppercase letter and one number'
+        });
+    }
+
+    next();
+};
+
+module.exports = {
+    validateUserData,
+    validateLoginData,
+    validateUpdateProfile
+};

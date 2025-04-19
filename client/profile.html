@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="css/profile.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <header>
         <a href="services.html" class="logo">
@@ -37,22 +39,19 @@
                     <h3><i class="fas fa-info-circle"></i> Personal Information</h3>
                     <div class="info-row">
                         <div class="info-label">First Name:</div>
-                        <div class="info-value">Emily</div>
+                        <div class="info-value" id="firstName"></div>
                     </div>
                     <div class="info-row">
                         <div class="info-label">Last Name:</div>
-                        <div class="info-value">Johnson</div>
+                        <div class="info-value" id="lastName"></div>
                     </div>
                     <div class="info-row">
                         <div class="info-label">Email:</div>
-                        <div class="info-value">emily.johnson@example.com</div>
+                        <div class="info-value" id="email"></div>
                     </div>
                     <div class="info-row">
                         <div class="info-label">Phone:</div>
-                        <div class="info-value">+1 (555) 123-4567</div>
-                    </div>
-                    <div class="button-container">
-                        <button class="edit-btn"><i class="fas fa-edit"></i> Edit Information</button>
+                        <div class="info-value" id="phone"></div>
                     </div>
                 </div>
 
@@ -60,16 +59,49 @@
                     <h3><i class="fas fa-lock"></i> Account Security</h3>
                     <div class="info-row">
                         <div class="info-label">Password:</div>
-                        <div class="info-value">••••••••</div>
+                        <div class="info-value" id="password"></div>
                     </div>
                     <div class="button-container">
-                        <button class="edit-btn"><i class="fas fa-edit"></i> Change Password</button>
+                        <button class="edit-btn"><i class="fas fa-edit"></i> Edit Information</button>
                     </div>
-                    
+                </div>
+            </div>
+        </div>
+
+        <div class="edit-form-container" id="editFormContainer" style="display: none;">
+            <form id="editProfileForm">
+                <h3><i class="fas fa-edit"></i> Edit Profile</h3>
+
+                <div class="form-group">
+                    <label for="editFirstName">First Name:</label>
+                    <input type="text" id="editFirstName" required>
                 </div>
 
-               
-            </div>
+                <div class="form-group">
+                    <label for="editLastName">Last Name:</label>
+                    <input type="text" id="editLastName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="editPhone">Phone:</label>
+                    <input type="tel" id="editPhone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="editEmail">Email:</label>
+                    <input type="email" id="editEmail" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="editPassword">New Password:</label>
+                    <input type="password" id="editPassword" placeholder="Leave empty to keep current">
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" class="save-btn">Save Changes</button>
+                    <button type="button" class="cancel-btn">Cancel</button>
+                </div>
+            </form>
         </div>
     </main>
 
@@ -78,5 +110,7 @@
     </footer>
 
     <script src="js/logoutBtn.js"></script>
+    <script src="js/profile.js"></script>
 </body>
+
 </html>

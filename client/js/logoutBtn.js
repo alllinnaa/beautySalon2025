@@ -1,11 +1,7 @@
-document.querySelector('.logout-btn').addEventListener('click', function() {
+document.querySelector('.logout-btn')?.addEventListener('click', function() {
     if(confirm('Are you sure you want to log out?')) {
+        localStorage.removeItem('user');
         window.location.href = 'login.html';
     }
 });
 
-document.querySelectorAll('.book-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-        window.location.href = 'book-appointment.html';
-    });
-});
