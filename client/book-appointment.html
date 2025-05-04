@@ -14,58 +14,50 @@
         <a href="services.html" class="logo">
             <i class="fas fa-butterfly"></i> Butterfly
         </a>
-        <nav>
+        <nav aria-label="Main navigation">
             <ul>
                 <li><a href="book-appointment.html"><i class="fas fa-calendar-plus"></i> Book Appointment</a></li>
-                <li><a href="my-appointments.html"><i class="far fa-calendar-check"></i> My Appointments</a></li>
-                <li><a href="history.html"><i class="fas fa-history"></i> History</a></li>
                 <li><a href="services.html"><i class="fas fa-spa"></i> Services</a></li>
                 <li><a href="profile.html"><i class="far fa-user"></i> My Profile</a></li>
-                <li><button class="logout-btn">Log Out</button></li>
+                <li><button class="logout-btn" aria-label="Log out">Log Out</button></li>
             </ul>
         </nav>
     </header>
 
-    <main class="booking-container">
-        <h1><i class="fas fa-calendar-plus"></i> Book an Appointment</h1>
+    <main class="booking-container" aria-labelledby="booking-heading">
+        <h1 id="booking-heading"><i class="fas fa-calendar-plus"></i> Book an Appointment</h1>
         
-        <form id="booking-form">
+        <form id="booking-form" novalidate>
             <div class="form-group">
                 <label for="service"><i class="fas fa-spa"></i> Select Service:</label>
-                <select id="service" name="service" required>
+                <select id="service" name="service" required aria-required="true">
                     <option value="">-- Choose a service --</option>
-                    <option value="manicure">Manicure - from $15</option>
-                    <option value="haircut">Women's Haircut - from $20</option>
-                    <option value="eyelashes">Eyelash Extensions - from $30</option>
-                    <option value="eyebrows">Eyebrow Shaping - from $12</option>
-                    <option value="facial">Facial Spa - from $25</option>
-                    <option value="waxing">Wax Hair Removal - from $10</option>
                 </select>
             </div>
 
             <div class="form-group">
                 <label for="date"><i class="far fa-calendar-alt"></i> Date:</label>
-                <input type="date" id="date" name="date" required>
+                <input type="date" id="date" name="date" required 
+                       min="" value="">
             </div>
 
             <div class="form-group">
                 <label for="time"><i class="far fa-clock"></i> Time:</label>
-                <input type="time" id="time" name="time" min="09:00" max="18:00" required>
+                <input type="time" id="time" name="time" 
+                       min="09:00" max="18:00" step="1800" required>
             </div>
 
             <div class="form-group">
-                <label for="specialist"><i class="fas fa-user-tie"></i> Preferred Specialist (optional):</label>
-                <select id="specialist" name="specialist">
+                <label for="specialist"><i class="fas fa-user-tie"></i> Preferred Specialist:</label>
+                <select id="specialist" name="specialist" aria-label="Preferred specialist">
                     <option value="">-- No preference --</option>
-                    <option value="anna">Anna K.</option>
-                    <option value="maria">Maria S.</option>
-                    <option value="olga">Olga M.</option>
                 </select>
             </div>
 
             <div class="form-group">
                 <label for="notes"><i class="far fa-edit"></i> Additional Notes:</label>
-                <textarea id="notes" name="notes" rows="3"></textarea>
+                <textarea id="notes" name="notes" rows="3" 
+                          placeholder="Any special requests or allergies..."></textarea>
             </div>
 
             <button type="submit" class="submit-btn">Confirm Booking</button>
@@ -75,7 +67,13 @@
     <footer>
         <p>&copy; 2023 Butterfly Beauty Salon. All rights reserved.</p>
     </footer>
-
+    
+    <script src="js/book-appointment.js"></script>
     <script src="js/logoutBtn.js"></script>
+    
+    <script>
+        document.getElementById('date').min = new Date().toISOString().split('T')[0];
+        document.getElementById('date').value = new Date().toISOString().split('T')[0];
+    </script>
 </body>
 </html>

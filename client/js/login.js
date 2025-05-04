@@ -1,4 +1,3 @@
-// login.js
 document.querySelector('.login-form').addEventListener('submit', async (e) => {
     e.preventDefault();
 

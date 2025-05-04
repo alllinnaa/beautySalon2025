@@ -1,4 +1,3 @@
-const Service = require('../models/Service');
 const ServiceRepository = require('../repositories/ServiceRepository');
 
 class ServiceService {

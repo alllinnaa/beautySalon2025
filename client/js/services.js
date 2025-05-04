@@ -22,6 +22,7 @@ function renderServices(services) {
             <div class="service-info">
                 <h3>${service.name}</h3>
                 <p>${service.description}</p>
+                <p>Duration: ${service.duration} min</p>
                 <p class="price">$${service.price}</p>
                 <button class="book-btn" data-service-id="${service._id}">Book Now</button>
             </div>

@@ -6,19 +6,16 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    // Відображення даних
     document.getElementById('firstName').textContent = user.firstName;
     document.getElementById('lastName').textContent = user.lastName;
     document.getElementById('email').textContent = user.email;
     document.getElementById('phone').textContent = user.phone;
     document.getElementById('password').textContent = '••••••••';
 
-    // Елементи форми
     const editFormContainer = document.getElementById('editFormContainer');
     const editProfileForm = document.getElementById('editProfileForm');
     const editButtons = document.querySelectorAll('.edit-btn');
 
-    // Обробник кнопки редагування (тепер для першої кнопки)
     editButtons[0].addEventListener('click', () => {
         document.getElementById('editFirstName').value = user.firstName;
         document.getElementById('editLastName').value = user.lastName;
@@ -28,12 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
         editFormContainer.style.display = 'block';
     });
 
-    // Скасування
     document.querySelector('.cancel-btn').addEventListener('click', () => {
         editFormContainer.style.display = 'none';
     });
 
-    // Відправка форми
     editProfileForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         
