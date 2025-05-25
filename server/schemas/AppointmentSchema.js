@@ -26,6 +26,10 @@ const AppointmentSchema = new mongoose.Schema({
             message: 'Appointment date must be in the future'
         }
     },
+    duration: {
+        type: Number,
+        required: true
+    },
     appointmentEnd: { 
         type: Date 
     },

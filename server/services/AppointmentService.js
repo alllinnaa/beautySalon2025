@@ -16,6 +16,8 @@ class AppointmentService {
             if (!service) {
                 throw new Error('Service not found');
             }
+
+            appointmentData.duration= service.duration;
     
             const start = new Date(appointmentData.appointmentDate);
             const end = new Date(start.getTime() + service.duration * 60000);
